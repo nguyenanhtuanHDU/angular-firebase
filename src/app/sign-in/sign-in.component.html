@@ -1,29 +1,30 @@
-<div class="p-5 m-5">
-  <!-- <mat-form-field>
-    <mat-label>Input</mat-label>
-    <input matInput />
-  </mat-form-field>
-
-  <mat-form-field>
-    <mat-label>Textarea</mat-label>
-    <textarea matInput></textarea>
-  </mat-form-field> -->
-</div>
-
-<div class="w-100 d-flex align-items-center justify-content-center flex-column">
-  <h3>Sign in with</h3>
+<div
+  class="w-100 d-flex align-items-center justify-content-center flex-column mt-5 pt-5"
+>
+  <h3 class="mb-3">Sign in with</h3>
   <div class="d-flex gap-3">
-    <div class="logo-item d-flex align-items-center justify-content-center">
+    <div
+      class="logo-item d-flex align-items-center justify-content-center"
+      (click)="signInWithGoogle()"
+    >
       <img src="../../assets/images/logos/google.svg" alt="" />
     </div>
-    <div class="logo-item d-flex align-items-center justify-content-center">
+    <div
+      class="logo-item d-flex align-items-center justify-content-center"
+      (click)="signInWithFacebook()"
+    >
       <img src="../../assets/images/logos/facebook.svg" alt="" />
     </div>
-    <div class="logo-item d-flex align-items-center justify-content-center">
-      <img src="../../assets/images/logos/twitter.svg" alt="" />
+  </div>
+
+  <div class="user mt-4 d-flex flex-column mt-5">
+    <div
+      *ngIf="avatar"
+      class="user-avatar d-flex align-items-center justify-content-center mx-auto mb-3"
+    >
+      <img [src]="avatar" alt="" />
     </div>
-    <div class="logo-item d-flex align-items-center justify-content-center">
-      <img src="../../assets/images/logos/github.svg" alt="" />
-    </div>
+    <div class="user-name" *ngIf="fullName">{{ fullName }}</div>
+    <div class="user-email" *ngIf="email">{{ email }}</div>
   </div>
 </div>
